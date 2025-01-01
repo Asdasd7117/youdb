@@ -1,0 +1,11 @@
+# تفعيل محرك إعادة الكتابة
+RewriteEngine On
+
+# إذا لم يكن الطلب لملف موجود
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# إذا لم يكن الطلب لدليل موجود
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# توجيه الطلب إلى index.php
+RewriteRule ^(.*)$ index.php [L]
